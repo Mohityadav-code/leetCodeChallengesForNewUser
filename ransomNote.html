@@ -45,7 +45,8 @@
             if (notearray[i] == magarray[j]) {
                 notearray.splice(i, 1)
                 magarray.splice(j, 1)
-              
+                i--
+                j--
             }
         }
     }
