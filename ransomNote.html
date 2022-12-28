@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ransom Note</title>
+</head>
+
+<body>
+    <h1>
+        Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters
+        from magazine and false otherwise.
+
+        </br>
+        Each letter in magazine can only be used once in ransomNote.
+    </h1>
+    <h2>
+        Example 1:
+
+        Input: ransomNote = "a", magazine = "b"
+        Output: false
+        </br>
+        Example 2:
+        Input: ransomNote = "aa", magazine = "ab"
+        Output: false
+        </br>
+        Example 3:
+
+        Input: ransomNote = "aa", magazine = "aab"
+        Output: true
+
+    </h2>
+</body>
+<script>
+    var ransomNote = "aabaaaasa"
+    var magazine = "baasaaaaaba"
+    var notearray = Array.from(ransomNote)
+    var magarray = Array.from(magazine)
+    // var i = 0
+    // var j = 0
+    for (var i = 0; i < notearray.length; i++) {
+        for (var j = 0; j < magarray.length; j++) {
+            if (notearray[i] == magarray[j]) {
+                notearray.splice(i, 1)
+                magarray.splice(j, 1)
+              
+            }
+        }
+    }
+    if (notearray.length == 0) {
+        console.log("True");
+    }
+    else {
+        console.log("False");
+    }
+</script>
+
+</html>
