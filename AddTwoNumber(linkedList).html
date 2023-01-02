@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        You are given two non-empty linked lists representing two non-negative integers. The digits are stored in
+        </br>
+        reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a
+        </br>
+        linked list.
+        </br>
+        You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+    </h1>
+</body>
+<script>
+    var l1 = [2,4,3], l2 = [5,6,4]
+    var l1rev = []
+    // var l2 = [9,9,9,9]
+    var l2rev = []
+    // reversing both array
+    for (var i = l1.length - 1; i > -1; i--) {
+        l1rev.push(parseInt(l1[i]))
+    }
+    for (var i = l2.length - 1; i > -1; i--) {
+        l2rev.push(parseInt(l2[i]))
+    }
+
+    console.log(l1rev);
+    console.log(l2rev);
+    var calc = 10 ** (l1rev.length)
+    var news1 = 0
+    var news2 = 0
+    // converting into digits 
+    for (var i = 0; i < l1rev.length; i++) {
+        calc = calc / 10
+        news2 += (l1rev[i] * calc)
+    }
+    var calc = 10 ** (l2rev.length)
+    for (var i = 0; i < l2rev.length; i++) {
+        calc = calc / 10
+        news1 += (l2rev[i] * calc)
+    }
+    var total=news1+news2
+    console.log(news1);
+    console.log(news2);
+    console.log("total is ",total);
+    total=total.toString()
+    var Output=[]
+    for(var i=total.length-1;i>-1;i--){
+        Output.push(total[i])
+    }
+    console.log(Output);
+</script>
+
+</html>
