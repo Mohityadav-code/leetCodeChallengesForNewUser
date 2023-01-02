@@ -34,8 +34,6 @@ In this case, the max area of water (blue section) the container can contain is 
     for(var i=0;i<height.length-1;i++){
         for(var j=1;j<height.length;j++){
             area=height[i]*height[j]
-            console.log("height[i] is : ",height[i],"height[j] is : ",height[j]);
-            console.log("area is ",area);
             if(area>maxarea){
                 maxarea=area
             }
